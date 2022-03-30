@@ -1,17 +1,14 @@
-import React, {Component} from "react";
+import React from "react";
+import Navigation from "../../components/navigation/Navigation"
 
 
-class Layout extends Component {
-    state = {
-
-    }
-    render() {
-        return (
-            <div>
-                <h1>Pam</h1>
-            </div>
-        );
-    }
+const layout = () => {
+    return (
+        <div>
+           <Navigation />
+        </div>
+    );
+    
 }
 
-export default Layout;
+export default layout;
