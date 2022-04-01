@@ -1,0 +1,33 @@
+h1 {
+    font-size: 3.2rem !important;    
+}
+
+.shopImage {
+    height: 85vh;
+}
+
+.Auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    height: 85vh;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.Image {
+    position: absolute;
+    top:15%;
+    left: -30px;
+    border-radius: 25px;
+    height: 500px;
+    width: 500px;
+    box-shadow: 0px 10px 15px #dd954d;
+}
+
+.signUp {
+    text-decoration: none;
+}

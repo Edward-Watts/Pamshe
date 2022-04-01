@@ -1,13 +1,15 @@
 import './App.css';
-import Layout from './hoc/Layout/Layout';
+import Layout from './hoc/layout/Layout';
+import Auth from './containers/auth/Auth';
 
 const app = () => {
-  let routes = ""
+  let routes = " "
   return (
     <div className="App">
       <Layout>
         {routes}
       </Layout>
+      <Auth />
     </div>
   );
 }
