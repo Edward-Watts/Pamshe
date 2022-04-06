@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 
 import './Signin.css'
 
-const signin = () => {
-    const SigninSchema = Yup.object().shape({
+const authenticate = () => {
+    const AuthenticateSchema = Yup.object().shape({
         // firstName: Yup.string()
         //     .min(2, 'Too Short!')
         //     .max(50, 'Too Long!')
@@ -30,7 +30,7 @@ const signin = () => {
                 email: '',
                 password: ''
             }}
-                validationSchema={SigninSchema}
+                validationSchema={AuthenticateSchema}
                 onSubmit={values => {
                 // same shape as initial values
                 console.log(values);
@@ -56,4 +56,4 @@ const signin = () => {
 }
 
 
-export default signin;
+export default authenticate;
