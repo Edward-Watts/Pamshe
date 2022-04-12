@@ -2,55 +2,60 @@ import React, {Component} from "react";
 import {Carousel} from 'react-bootstrap';
 
 import './Home.css'
+import MenuBar from "../../components/menuBar/MenuBar";
 
 
 class Home extends Component {
     state = {
-
+        items: [
+            {
+                id: 1,
+                heading: 'First slide label',
+                text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                image: '',
+            },
+            {
+                id: 2,
+                heading: 'Second slide label',
+                text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                image: '',
+            },
+            {
+                id: 3,
+                heading: 'Third slide label',
+                text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                image: '',
+            },
+            {
+                id: 4,
+                heading: 'Four slide label',
+                text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+                image: '',
+            }
+        ]
     }
 
     render () {
         return (
             <div>
                 <div>
-                    <h1>Welcome</h1>
-                    <Carousel>
-                        <Carousel.Item interval={1000}>
-                            <img
-                            className="d-block w-100"
-                            src="holder.js/800x400?text=First slide&bg=373940"
-                            alt="First slide"
-                            />
-                            <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item interval={500}>
-                            <img
-                            className="d-block w-100"
-                            src="holder.js/800x400?text=Second slide&bg=282c34"
-                            alt="Second slide"
-                            />
-                            <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                            className="d-block w-100"
-                            src="holder.js/800x400?text=Third slide&bg=20232a"
-                            alt="Third slide"
-                            />
-                            <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
+                    <MenuBar />
+                        <Carousel>
+                            {this.state.items.map(item => (
+                            <Carousel.Item interval={1500} key={item.id}>
+                                <img
+                                className="d-block w-100"
+                                src="holder.js/800x400?text=First slide&bg=373940"
+                                alt="slide"
+                                />
+                                <Carousel.Caption>
+                                <h3>{item.heading}</h3>
+                                <p>{item.text}</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            ))}
+                        </Carousel>
                 </div>
-                
             </div>
         )
     } 
