@@ -1,3 +1,13 @@
 .menuBar {
     background-color: white;
+    text-align: center;
+}
+
+.search {
+    background-color: rgb(189, 189, 189);
+    width: 450px;
+}
+
+h6 {
+    margin: 0.5rem !important;
 }
