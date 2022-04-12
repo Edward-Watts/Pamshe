@@ -8,7 +8,8 @@ import Contacts from './containers/contacts/Contacts';
 
 
 const app = () => {
-  let routes = " "
+  let routes = null;
+  console.log(routes)
   return (
     <div className="App">
       <Layout />
