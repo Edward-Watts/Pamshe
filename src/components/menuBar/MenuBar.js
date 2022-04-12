@@ -15,9 +15,14 @@ const menuBar = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            <Dropdown.Item href="#/action-1">Kente</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Kaftan</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Dashiki</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Kaba</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Habesha Kemis</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Djellaba</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Isiagu</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Toghu/Atoghu</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
