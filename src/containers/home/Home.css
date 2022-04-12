@@ -1,4 +1,13 @@
-img {
+.imgSlide {
     background-color: black;
     height: 350px;
+}
+
+.cardContainer {
+    height: 350px;
+}
+
+img {
+    background-color: black;
+    height: 22rem;
 }

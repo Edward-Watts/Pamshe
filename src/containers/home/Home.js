@@ -32,6 +32,20 @@ class Home extends Component {
                 text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
                 image: '',
             }
+        ],
+        cards: [
+            {
+                id: 1,
+                title: 'Gents Wear',
+            },
+            {
+                id: 2,
+                title: 'Ladies Wear',
+            },
+            {
+                id: 3,
+                title: 'Kids Wear',
+            }
         ]
     }
 
@@ -44,7 +58,7 @@ class Home extends Component {
                             {this.state.items.map(item => (
                             <Carousel.Item interval={1500} key={item.id}>
                                 <img
-                                className="d-block w-100"
+                                className="imgSlide d-block w-100"
                                 src="holder.js/800x400?text=First slide&bg=373940"
                                 alt="slide"
                                 />
@@ -56,19 +70,18 @@ class Home extends Component {
                             ))}
                         </Carousel>
                 </div>
-                <div className="cardContainer">
-                    <Container>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
-                            </Card.Body>
+                <div className="cardContainer mt-5">
+                    <Container className="d-flex justify-content-center align-items-center">
+                        {this.state.cards.map(card => (
+                        <Card className="mx-3 bg-dark text-white" style={{width: '18rem', height: '22rem'}}>
+                            <Card.Img src="holder.js/100px270" alt="Card image" />
+                            <Card.ImgOverlay>
+                                <Card.Title>{card.title}</Card.Title>
+                                <Card.Text>Last updated 3 mins ago</Card.Text>
+                                <Button variant="light">Go somewhere</Button>
+                            </Card.ImgOverlay>
                         </Card>
+                        ))}
                     </Container>
                 </div>
             </div>
