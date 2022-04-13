@@ -5,6 +5,7 @@ import Layout from './hoc/layout/Layout';
 import Home from './containers/home/Home';
 import Auth from './containers/auth/Auth';
 import Contacts from './containers/contacts/Contacts';
+import Footer from './components/footer/Footer';
 
 
 const app = () => {
@@ -18,7 +19,7 @@ const app = () => {
         < Route path="/auth" element={<Auth />}/>
         < Route path="/customer-service" element={<Contacts />}/>
       </Routes>
-      
+      <Footer />
     </div>
   );
 }

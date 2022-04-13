@@ -43,7 +43,7 @@ const Auth = (props) => {
                             <AuthForm reg = {regState.reg} />
                         </div>
                         
-                        <div className="mt-4">
+                        <div className="mt-3">
                             <small>{regState.status} <span onClick={checkAuthHandler} className="checkAuth">{regState.action}</span></small> 
                         </div>
                     </Col>

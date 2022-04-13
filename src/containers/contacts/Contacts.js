@@ -1,24 +1,40 @@
-import React, {Component} from "react";
+import React from "react";
+import { Container, Col, Row } from "react-bootstrap";
+
+import './Contacts.css'
+import MenuBar from "../../components/menuBar/MenuBar";
 
 
-class Contacts extends Component {
-    state = {
-
-    }
-
-    render () {
-        return (
-            <div>
-                <div>
-                    <h1>We're glad to assist you</h1>
+const Contacts = () => {
+    return (
+        <div className="Contact">
+            <MenuBar />
+            <Container>
+                <Row className="mt-3">
+                    <Col className="">
+                    <h2>We're glad to assist you!</h2>
                     <p>
-                        
+                        Some Text Here     
                     </p>
-                </div>
+                    <p>
+                        Some Text Here     
+                    </p>
+                    <p>
+                        Some Text Here     
+                    </p>
+                    </Col>
+                    <Col className="">
+                        <h2>We're glad to assist you!</h2>
+                        <p>
+                            Some Text Here     
+                        </p>
+                    </Col>
+                </Row>
+            </Container>
+            
                 
-            </div>
-        )
-    } 
+        </div>
+    )
 }
 
 export default Contacts;

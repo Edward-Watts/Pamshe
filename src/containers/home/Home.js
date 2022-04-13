@@ -70,14 +70,14 @@ class Home extends Component {
                             ))}
                         </Carousel>
                 </div>
-                <div className="cardContainer mt-5">
+                <div className="cardContainer mt-4">
                     <Container className="d-flex justify-content-center align-items-center">
                         {this.state.cards.map(card => (
-                        <Card className="mx-3 bg-dark text-white" style={{width: '18rem', height: '22rem'}}>
+                        <Card className="mx-3 bg-dark text-white" style={{width: '18rem', height: '11rem'}} key={card.id}>
                             <Card.Img src="holder.js/100px270" alt="Card image" />
-                            <Card.ImgOverlay>
+                            <Card.ImgOverlay style={{top: 'auto'}}>
                                 <Card.Title>{card.title}</Card.Title>
-                                <Card.Text>Last updated 3 mins ago</Card.Text>
+                                <Card.Text className="d-none">Some text here</Card.Text>
                                 <Button variant="light">Go somewhere</Button>
                             </Card.ImgOverlay>
                         </Card>

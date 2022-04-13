@@ -10,7 +10,7 @@ const menuBar = () => {
             <Container className="sub d-flex align-items-center justify-content-center">
                 <div className="item mx-1">
                     <Dropdown>
-                        <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+                        <Dropdown.Toggle variant="transparent" id="dropdown-basic" style={{fontWeight: '500', color: 'inherit'}}>
                             Category
                         </Dropdown.Toggle>
 
