@@ -33,7 +33,7 @@ const Auth = (props) => {
             <Container>
                 <Row>
                     <Col className="shopImage d-none d-lg-block">
-                        <img src={require("../../assets/shopbags/shopbags.jpg")} className="Image" alt="shopbags"/>
+                        <img src="" className="Image" alt="shopbags"/>
                     </Col>
                     <Col className="formContainer">
                         <div>
