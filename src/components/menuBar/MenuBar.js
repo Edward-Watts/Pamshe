@@ -27,16 +27,16 @@ const menuBar = () => {
                     </Dropdown>
                 </div>
                 <div className="item mx-1">
-                    <h6>Customize</h6>
+                    <a href="#"><h6>Customize</h6></a>
                 </div>
                 <div className="search mx-1">
                     <h6>Insert search component</h6>
                 </div>
                 <div className="item mx-1">
-                    <h6>User</h6>
+                    <a href="#"><h6>User</h6></a>
                 </div>
                 <div className="item mx-1">
-                    <h6>Cart</h6>
+                    <a href="#"><h6>Cart</h6></a>
                 </div>
             </Container>
         </div>

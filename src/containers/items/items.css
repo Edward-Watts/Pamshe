@@ -1,0 +1,7 @@
+.items {
+    min-height: 80vh;
+}
+
+.itemWrapper {
+    flex-wrap: wrap;
+}

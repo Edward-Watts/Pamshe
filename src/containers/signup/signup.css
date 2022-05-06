@@ -1,0 +1,41 @@
+.back {
+    background-image:  url(../../assets/background/man.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.text {
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.input {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid rgb(197, 197, 197);
+}
+
+.formWrapper {
+    color: white;
+    flex-direction: column;
+    height: 92vh;
+    text-align: left;
+}
+
+.form {
+    display: inline-grid;
+    width: 350px;
+}
+
+.error {
+    color: red;
+    font-size: x-small;
+}
+
+.signLink {
+    color: #0d6efd !important;
+}

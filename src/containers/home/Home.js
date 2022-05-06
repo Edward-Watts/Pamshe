@@ -1,13 +1,14 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import {Carousel, Container, Card, Button} from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
 import './Home.css'
 import MenuBar from "../../components/menuBar/MenuBar";
 
 
-class Home extends Component {
-    state = {
-        items: [
+const Home = () => {
+    const [items, setItems] = useState(
+        [
             {
                 id: 1,
                 heading: 'First slide label',
@@ -32,8 +33,11 @@ class Home extends Component {
                 text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
                 image: '',
             }
-        ],
-        cards: [
+        ]
+    );
+
+    const [cards, setCards] = useState(
+        [
             {
                 id: 1,
                 title: 'Gents Wear',
@@ -47,16 +51,23 @@ class Home extends Component {
                 title: 'Kids Wear',
             }
         ]
-    }
+    )
 
-    render () {
-        return (
+    let navigate = useNavigate();
+
+
+    const goToWearHandler = (card) => {
+        console.log(card)
+        navigate(`items/:${card.id}`);
+    } 
+
+    return (
             <div>
                 <div>
                     <MenuBar />
                         <Carousel>
-                            {this.state.items.map(item => (
-                            <Carousel.Item interval={1500} key={item.id}>
+                            {items.map(item => (
+                            <Carousel.Item interval={2000} key={item.id}>
                                 <img
                                 className="imgSlide d-block w-100"
                                 src="holder.js/800x400?text=First slide&bg=373940"
@@ -70,23 +81,22 @@ class Home extends Component {
                             ))}
                         </Carousel>
                 </div>
-                <div className="cardContainer mt-4">
-                    <Container className="d-flex justify-content-center align-items-center">
-                        {this.state.cards.map(card => (
-                        <Card className="mx-3 bg-dark text-white" style={{width: '18rem', height: '11rem'}} key={card.id}>
+                <div className="cardContainer mt-1">
+                    <Container className="cardWrapper d-flex justify-content-center align-items-center">
+                        {cards.map(card => (
+                        <Card className="mx-3 mt-3 bg-dark text-white" style={{width: '20rem', height: '11rem'}} key={card.id}>
                             <Card.Img src="holder.js/100px270" alt="Card image" />
                             <Card.ImgOverlay style={{top: 'auto'}}>
                                 <Card.Title>{card.title}</Card.Title>
                                 <Card.Text className="d-none">Some text here</Card.Text>
-                                <Button variant="light">Go somewhere</Button>
+                                <Button variant="light" onClick={() => goToWearHandler(card)}>Go somewhere</Button>
                             </Card.ImgOverlay>
                         </Card>
                         ))}
                     </Container>
                 </div>
             </div>
-        )
-    } 
+    )
 }
 
 export default Home;

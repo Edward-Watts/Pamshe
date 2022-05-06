@@ -7,3 +7,9 @@ img {
     background-color: black;
     height: 11rem;
 }
+
+@media (max-width: 765.98px) {
+    .cardWrapper {
+        flex-wrap: wrap;
+    }
+}
