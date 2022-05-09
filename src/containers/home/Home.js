@@ -41,14 +41,17 @@ const Home = () => {
             {
                 id: 1,
                 title: 'Gents Wear',
+                image: ''
             },
             {
                 id: 2,
                 title: 'Ladies Wear',
+                image: ''
             },
             {
                 id: 3,
                 title: 'Kids Wear',
+                image: ''
             }
         ]
     )
@@ -85,11 +88,11 @@ const Home = () => {
                     <Container className="cardWrapper d-flex justify-content-center align-items-center">
                         {cards.map(card => (
                         <Card className="mx-3 mt-3 bg-dark text-white" style={{width: '20rem', height: '11rem'}} key={card.id}>
-                            <Card.Img src="holder.js/100px270" alt="Card image" />
+                            <Card.Img src={require("../../assets/background/man.jpg")} alt="Card image" />
                             <Card.ImgOverlay style={{top: 'auto'}}>
                                 <Card.Title>{card.title}</Card.Title>
                                 <Card.Text className="d-none">Some text here</Card.Text>
-                                <Button variant="light" onClick={() => goToWearHandler(card)}>Go somewhere</Button>
+                                <Button variant="light" onClick={() => goToWearHandler(card)}>View</Button>
                             </Card.ImgOverlay>
                         </Card>
                         ))}

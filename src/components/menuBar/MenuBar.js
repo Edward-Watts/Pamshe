@@ -27,7 +27,7 @@ const menuBar = () => {
                     </Dropdown>
                 </div>
                 <div className="item mx-1">
-                    <a href="#"><h6>Customize</h6></a>
+                    <a href="customize"><h6>Customize</h6></a>
                 </div>
                 <div className="search mx-1">
                     <h6>Insert search component</h6>

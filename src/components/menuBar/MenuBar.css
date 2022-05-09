@@ -1,5 +1,6 @@
 .menuBar {
     background-color: white;
+    color: #3D3D3D !important;
     text-align: center;
 }
 
@@ -14,6 +15,12 @@ h6 {
 
 a {
     text-decoration: none !important;
-    color: inherit !important;
+    color: #3D3D3D !important;
     cursor: pointer !important;
+}
+
+.userImage {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }

@@ -6,23 +6,16 @@
 .title {
     font-size: 2.2rem !important;
     font-weight: bolder !important;
-    color: #3D3D3D !important;
+    color: #FFCB97 !important;
 }
 
-.userImage {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-}
-
-.link {
+.navLink {
      font-weight: bold;
-     transition: 0.6s all ease;
+     border: 1px solid transparent;
+     color: #FFCB97 !important;
 }
 
-.link:hover {
-    background-color: #FFCB97;
-    border-radius: 10px;
-    box-shadow: 0px 5px 7px #dd954d;
-    transition: 0.6s all ease;
+.navLink:hover {
+    border-bottom-style: solid;
+    border-bottom-color: #FFCB97;
 }
