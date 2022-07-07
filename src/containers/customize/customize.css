@@ -16,13 +16,8 @@ label {
 .formWrapper {
     color: white;
     flex-direction: column;
-    height: 92vh;
+    height: 100%;
     text-align: left;
-}
-
-.form {
-    display: inline-grid;
-    width: 350px;
 }
 
 .error {

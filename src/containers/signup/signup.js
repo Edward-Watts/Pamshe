@@ -1,12 +1,24 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, {useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Alert, Spinner } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
+import * as types from '../../store/actions/Auth';
+
+
 import './signup.css';
+import axios from "axios";
 
 
-const signup = () => {
+const Signup = () => {
+    const [show, setShow] = useState(false);
+
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+    let loading = useSelector(state => state.auth.loading)
+    let errorMessage = useSelector(state => state.auth.error)
 
     const signUpSchema = Yup.object().shape({
         firstName: Yup.string()
@@ -26,6 +38,37 @@ const signup = () => {
             .min(8, 'Password is too short - at least 8 characters.')
     });
 
+    const signUpHandler = (values) => {
+        const signUpData = {
+            email: values.email,
+            password: values.password,
+            returnSecureToken: true
+        }
+
+        dispatch(types.authStart())
+
+        const endpoint = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAo7z8hsknLPXExnUIPpHBRSp9OtVHbo74"
+
+        axios.post(endpoint, signUpData)
+        .then(res => {
+            if(res){
+                dispatch(types.authSignUpSuccess(res.data.idToken))
+                navigate('/signin')
+            }
+        })
+        .catch(err => {
+            if(err) {
+                setShow(true)
+                dispatch(types.authFail(err.message))
+            }
+        })       
+    }
+
+    let btnText = 'Sign up';
+    if(loading){
+        btnText = 'Loading';
+    }
+
     return (
         <div className="back">
            <Formik
@@ -37,17 +80,17 @@ const signup = () => {
                     confirmPassword:''
                 }}
                 validationSchema={signUpSchema}
-                onSubmit={values => {
-                // same shape as initial values
-                    console.log(values)
-                
-                }}>
+                onSubmit={values => {signUpHandler(values)}}>
                 {({ errors, touched }) => (
                     <div className="formWrapper d-flex justify-content-center align-items-center">
-                        <div className="text">
-                            <h1>Signup to enjoy amazing offers!</h1> 
+                        <div className="text-center my-4">
+                            <h1>Get started to enjoy amazing offers!</h1> 
                         </div>
                         <Form className="form">
+                            {show ? 
+                            <Alert variant="danger" className="text-center">
+                                <p className="mb-0">{errorMessage}</p>
+                            </Alert> : null}
                             <label id="firstName" htmlFor="firstname">First name</label>
                             <Field name="firstName" type="text" className="input" />
                             {errors.firstName && touched.firstName ? <small className="error">{errors.firstName}</small> : null}
@@ -68,9 +111,18 @@ const signup = () => {
                             <Field name="confirmPassword" type="password" className="input" />
                             {errors.confirmPassword && touched.confirmPassword ? (<small className="error">{errors.confirmPassword}</small>) : null}
 
-                            <Button className="mt-4" variant="primary" type="submit"> Sign up </Button>
+                            {loading ? <Button className="mt-4" variant="primary" type="submit">
+                                <Spinner
+                                    as="span"
+                                    animation="grow"
+                                    size="sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                />{btnText}</Button>
+                            : <Button className="mt-4" variant="primary" type="submit">{btnText}</Button> 
+                            }
                         </Form>
-                        <div className="mt-4">
+                        <div className="my-4">
                             Already here? <a className="signLink" href="signin">Sign in</a>
                         </div>
                     </div>
@@ -81,4 +133,4 @@ const signup = () => {
     
 }
 
-export default signup;
+export default Signup;

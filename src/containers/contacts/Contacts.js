@@ -10,7 +10,7 @@ const Contacts = () => {
         <div className="Contact">
             <MenuBar />
             <div className="customerService">
-                <Card className="bg-dark text-white" style={{width: 'auto', height: '15rem'}}>
+                <Card className="bg-dark text-white" style={{width: 'auto', height: '100%'}}>
                     <Card.Img style={{height: '100%'}} src={require("../../assets/background/cs1.jpg")} alt="Card image" />
                     <Card.ImgOverlay>
                         <Card.Title></Card.Title>
@@ -19,7 +19,7 @@ const Contacts = () => {
                 </Card>
             </div>
             <Container>
-                <Row className="mt-3" style={{color: '#FFCB97'}}>
+                <Row className="mt-3 d-flex align-items-center" style={{color: '#FFCB97'}}>
                     <Col className="">
                         <h2>We're glad to assist you!</h2>
                         <p>
@@ -31,7 +31,7 @@ const Contacts = () => {
                         </p>
                         <Button className="text-white" variant="primary" href="mailto:eddiewattsadjei@gmail.com">eddiewattsadjei@gmail.com</Button>
                     </Col>
-                    <Col className="d-flex justify-content-center align-items-center">
+                    <Col className="mt-4 d-flex justify-content-center align-items-center">
                         <p>
                             Social media links    
                         </p>

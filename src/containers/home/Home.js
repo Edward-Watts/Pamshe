@@ -61,7 +61,7 @@ const Home = () => {
 
     const goToWearHandler = (card) => {
         console.log(card)
-        navigate(`items/:${card.id}`);
+        navigate(`/items/:${card.id}`);
     } 
 
     return (
@@ -70,7 +70,7 @@ const Home = () => {
                     <MenuBar />
                         <Carousel>
                             {items.map(item => (
-                            <Carousel.Item interval={2000} key={item.id}>
+                            <Carousel.Item interval={3000} key={item.id}>
                                 <img
                                 className="imgSlide d-block w-100"
                                 src="holder.js/800x400?text=First slide&bg=373940"
@@ -84,10 +84,14 @@ const Home = () => {
                             ))}
                         </Carousel>
                 </div>
-                <div className="cardContainer mt-1">
-                    <Container className="cardWrapper d-flex justify-content-center align-items-center">
+                <div className="cardContainer  text-white mt-1">
+                    <Container>
+                        <div className="mt-3 d-flex justify-content-center align-items-center" style={{color: '#FFCB97'}}>
+                            <h2>Dashiki</h2>
+                        </div>
+                        <div className="cardWrapper d-flex justify-content-center align-items-center">
                         {cards.map(card => (
-                        <Card className="mx-3 mt-3 bg-dark text-white" style={{width: '20rem', height: '11rem'}} key={card.id}>
+                        <Card className="mx-3 mt-3 bg-dark" style={{width: '20rem', height: '100%'}} key={card.id}>
                             <Card.Img src={require("../../assets/background/man.jpg")} alt="Card image" />
                             <Card.ImgOverlay style={{top: 'auto'}}>
                                 <Card.Title>{card.title}</Card.Title>
@@ -96,6 +100,7 @@ const Home = () => {
                             </Card.ImgOverlay>
                         </Card>
                         ))}
+                        </div>
                     </Container>
                 </div>
             </div>

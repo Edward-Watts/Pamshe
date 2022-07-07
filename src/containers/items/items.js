@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, Button} from 'react-bootstrap';
 import { useState } from "react";
+import {useNavigate, useParams} from "react-router-dom";
 
 import MenuBar from "../../components/menuBar/MenuBar";
 
@@ -23,46 +24,50 @@ const Items = () => {
                 title: 'Kids Wear',
             },
             {
-                id: 1,
+                id: 4,
                 title: 'Gents Wear',
             },
             {
-                id: 2,
+                id: 5,
                 title: 'Ladies Wear',
             },
             {
-                id: 3,
+                id: 6,
                 title: 'Kids Wear',
             },
             {
-                id: 1,
+                id: 7,
                 title: 'Gents Wear',
             },
             {
-                id: 2,
+                id: 8,
                 title: 'Ladies Wear',
             },
             {
-                id: 3,
+                id: 9,
                 title: 'Kids Wear',
             },
             {
-                id: 1,
+                id: 10,
                 title: 'Gents Wear',
             },
             {
-                id: 2,
+                id: 11,
                 title: 'Ladies Wear',
             },
             {
-                id: 3,
+                id: 12,
                 title: 'Kids Wear',
             }
         ]
     );
-
+    const navigate = useNavigate();
+    const params = useParams();
+        
     const goToItemHandler = (item) => {
         console.log(item);
+        console.log(params.id)
+        navigate('/item')
     }
 
     return (
